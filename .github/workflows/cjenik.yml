@@ -1,1 +1,44 @@
-placeholder
+name: Objava cjenika
+
+# Odluka NN 101/2026 traži objavu svakog radnog dana najkasnije do 8:00.
+# Cron je u UTC-u. 04:30 UTC = 06:30 ljeti (CEST) i 05:30 zimi (CET),
+# dakle najmanje sat i pol zalihe za kašnjenje GitHubova rasporeda.
+on:
+  schedule:
+    - cron: '30 4 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cjenik
+  cancel-in-progress: false
+
+jobs:
+  objavi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generiraj cjenik
+        env:
+          SHOPIFY_STORE_DOMAIN: ${{ secrets.SHOPIFY_STORE_DOMAIN }}
+          SHOPIFY_ADMIN_TOKEN: ${{ secrets.SHOPIFY_ADMIN_TOKEN }}
+        run: node scripts/generate-cjenik.mjs
+
+      - name: Commitaj objavu
+        run: |
+          git config user.name  "cjenik-bot"
+          git config user.email "cjenik-bot@users.noreply.github.com"
+          git add public
+          if git diff --cached --quiet; then
+            echo "Nema promjena za commit."
+          else
+            git commit -m "Cjenik $(date -u +'%Y-%m-%d')"
+            git push
+          fi
