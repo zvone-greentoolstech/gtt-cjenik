@@ -74,6 +74,12 @@ Sidrena cijena živi u Shopifyju kao metafield proizvoda **`custom.sidrena_cijen
 
 Vrijednost je cijena zatečena **10. 9. 2026.** i **ne mijenja se** kad se promijeni prodajna cijena. Za proizvod uveden nakon tog datuma polje ostaje prazno; skripta ga tada izvijesti kao upozorenje, a stupac u cjeniku ostaje prazan.
 
+## Barkod
+
+Stupac `barkod` je namjerno prazan za sve artikle. Green Tools TECH proizvodi vlastite alate i prodaje ih izravno, bez posredovanja maloprodajnih lanaca koji traže GTIN/EAN oznake, pa ih artikli nemaju. Odluka traži da stupac postoji, a on postoji i ostaje prazan jer podatka nema. Upisivanje izmišljene oznake bilo bi netočno, pa se ne radi.
+
+Ako GTT jednom uvede EAN oznake, dovoljno ih je upisati u Shopify i sljedeća objava ih pokupi bez ikakve izmjene skripte.
+
 ## Održavanje
 
 Skripta prekida rad ako se prijava na Shopify ne uspije ili ako Shopify vrati nula proizvoda, da se ne objavi prazan cjenik. Workflow tada padne i GitHub pošalje mail.
