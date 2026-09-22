@@ -9,7 +9,14 @@
  *        public/arhiva/<naziv-po-odluci>.csv|.xml (trajni zapis svake objave)
  *
  * Pokretanje: node scripts/generate-cjenik.mjs
- * Potrebne varijable okoline: SHOPIFY_STORE_DOMAIN, SHOPIFY_ADMIN_TOKEN
+ * Potrebne varijable okoline:
+ *   SHOPIFY_STORE_DOMAIN   npr. xz1ihj-0i.myshopify.com
+ *   SHOPIFY_CLIENT_ID      Client ID aplikacije iz Dev Dashboarda
+ *   SHOPIFY_CLIENT_SECRET  Client secret iste aplikacije
+ *
+ * Od 1. 1. 2026. Shopify vise ne izdaje trajne tokene za custom aplikacije.
+ * Skripta pri svakom pokretanju razmijeni ID i secret za pristupni token
+ * koji vrijedi 24 sata (client credentials grant). Token nigdje ne zapisujemo.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync, statSync } from 'node:fs';
@@ -20,13 +27,38 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CONFIG = JSON.parse(readFileSync(join(ROOT, 'config.json'), 'utf8'));
 
 const STORE = process.env.SHOPIFY_STORE_DOMAIN;
-const TOKEN = process.env.SHOPIFY_ADMIN_TOKEN;
+const CLIENT_ID = process.env.SHOPIFY_CLIENT_ID;
+const CLIENT_SECRET = process.env.SHOPIFY_CLIENT_SECRET;
 const API_VERSION = CONFIG.shopifyApiVersion;
 
-if (!STORE || !TOKEN) {
-  console.error('Nedostaje SHOPIFY_STORE_DOMAIN ili SHOPIFY_ADMIN_TOKEN.');
+if (!STORE || !CLIENT_ID || !CLIENT_SECRET) {
+  console.error('Nedostaje SHOPIFY_STORE_DOMAIN, SHOPIFY_CLIENT_ID ili SHOPIFY_CLIENT_SECRET.');
   process.exit(1);
 }
+
+/* ---------- pristupni token (client credentials grant) ---------- */
+
+async function dohvatiToken() {
+  const res = await fetch(`https://${STORE}/admin/oauth/access_token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      grant_type: 'client_credentials',
+      client_id: CLIENT_ID,
+      client_secret: CLIENT_SECRET,
+    }),
+  });
+  if (!res.ok) {
+    throw new Error(`Neuspjesna prijava na Shopify (HTTP ${res.status}). ` +
+      'Provjeri Client ID i secret te je li aplikacija instalirana na trgovinu ' +
+      'i pripada li istoj Shopify organizaciji.');
+  }
+  const json = await res.json();
+  if (!json.access_token) throw new Error('Shopify nije vratio pristupni token.');
+  return json.access_token;
+}
+
+const TOKEN = await dohvatiToken();
 
 /* ---------- dohvat iz Shopifyja ---------- */
 
