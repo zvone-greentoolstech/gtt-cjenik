@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cjenik>
+  <trgovac>
+    <naziv>Green Tools TECH</naziv>
+    <oib>28051579566</oib>
+    <adresa>Vukomerić 23/18, 10418 Vukomerić</adresa>
+  </trgovac>
+  <objava>
+    <oblik_prodajnog_objekta>internetska trgovina</oblik_prodajnog_objekta>
+    <oznaka_objekta>greentools.tech</oznaka_objekta>
+    <broj_pohrane>1</broj_pohrane>
+    <datum_vrijeme>2026-09-22T14:09:31.917Z</datum_vrijeme>
+  </objava>
+  <proizvod>
+    <naziv_proizvoda>Broadfork</naziv_proizvoda>
+    <sifra_proizvoda>BF</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>175,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>175,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>175,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Crimper Attachment for Multi Dibbler</naziv_proizvoda>
+    <sifra_proizvoda>CMD</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>30,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>30,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>30,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Dibbles for Rolling Dibbler–Crimper (Pack of 10)</naziv_proizvoda>
+    <sifra_proizvoda>RD-DIB</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>45,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>45,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>45,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Double Wheel Hoe Upgrade Kit</naziv_proizvoda>
+    <sifra_proizvoda>WHX2</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>125,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>125,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>125,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Electric Wheel Hoe - NanoTrack MK2</naziv_proizvoda>
+    <sifra_proizvoda>NTMK2</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>1500,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>1500,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>1500,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Furrower for Wheel Hoe</naziv_proizvoda>
+    <sifra_proizvoda>FW</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>30,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>30,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>30,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Grid Marker VAR20</naziv_proizvoda>
+    <sifra_proizvoda>GM20</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>185,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>185,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>185,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Grid Marker VAR30</naziv_proizvoda>
+    <sifra_proizvoda>GM30</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>185,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>185,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>185,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Hand Cultivator</naziv_proizvoda>
+    <sifra_proizvoda>HC</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>25,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>25,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>25,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Handles for Broadfork</naziv_proizvoda>
+    <sifra_proizvoda>H</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>10,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>10,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>10,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Handles for Broadfork (Old Model)</naziv_proizvoda>
+    <sifra_proizvoda>HS</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>15,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>15,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>15,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Leek Dibbles (237 mm) for Multi Dibbler</naziv_proizvoda>
+    <sifra_proizvoda>MD-L</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>45,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>45,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>45,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Market Garden Pro Kit 1</naziv_proizvoda>
+    <sifra_proizvoda>PKIT1</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>595,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>595,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>DA</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje>Sniženje</naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>660,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Market Garden Starter Kit 1</naziv_proizvoda>
+    <sifra_proizvoda>SKIT1</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>225,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>225,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>DA</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje>Sniženje</naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>250,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Market Garden Starter Kit 2</naziv_proizvoda>
+    <sifra_proizvoda>SKIT2</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>165,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>165,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>DA</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje>Sniženje</naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>185,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Minifork</naziv_proizvoda>
+    <sifra_proizvoda>MIN</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>110,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>110,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>110,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Multi Dibbler</naziv_proizvoda>
+    <sifra_proizvoda>MD</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>165,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>165,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>165,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>No-Dig Garden Starter Kit: Broadfork + Roto Hoe</naziv_proizvoda>
+    <sifra_proizvoda>KIT-ND</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>315,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>315,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>DA</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje>Sniženje</naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>350,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Rollaway Nest Box System for Eggmobiles</naziv_proizvoda>
+    <sifra_proizvoda>NBS</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>850,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>850,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>850,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Rolling Dibbler - Crimper</naziv_proizvoda>
+    <sifra_proizvoda>RD</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>440,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>440,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>440,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Roto Hoe</naziv_proizvoda>
+    <sifra_proizvoda>RH</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>175,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>175,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>175,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Single Wheel Hoe</naziv_proizvoda>
+    <sifra_proizvoda>WHX1</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>250,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>250,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>250,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Spare Blade for Wheel Hoe</naziv_proizvoda>
+    <sifra_proizvoda>SB20</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>22,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>22,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>22,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Swing Hoe 12</naziv_proizvoda>
+    <sifra_proizvoda>SH12</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>50,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>50,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>50,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Swing Hoe 20</naziv_proizvoda>
+    <sifra_proizvoda>SH20</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>50,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>50,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>50,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Zip Plow</naziv_proizvoda>
+    <sifra_proizvoda>ZP</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>55,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>55,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>55,00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+</cjenik>
