@@ -1,0 +1,3 @@
+# Cjenik je namijenjen i automatiziranom preuzimanju (NN 101/2026).
+User-agent: *
+Allow: /
