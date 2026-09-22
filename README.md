@@ -14,11 +14,15 @@ CSV je razdvojen točka-zarezom, u UTF-8 s BOM-om, s decimalnim zarezom i bez oz
 
 ## Postavljanje (jednokratno)
 
-### 1. Shopify token
+### 1. Shopify aplikacija i vjerodajnice
 
-Shopify admin → Settings → Apps and sales channels → Develop apps → Create an app → Configure Admin API scopes → uključi **`read_products`** → Install → kopiraj Admin API access token (`shpat_…`).
+Od 1. 1. 2026. Shopify više ne dopušta stvaranje custom aplikacija iz admina, pa ide preko Dev Dashboarda: **Create app** → naziv `GTT cjenik` → dodaj opseg **`read_products`** (i ništa drugo) → **Release a version** → **Install** na trgovinu.
 
-Token daje samo čitanje proizvoda. Ne treba mu nijedno pravo pisanja.
+U postavkama aplikacije kopiraj **Client ID** i **Client secret**.
+
+Trajnih tokena više nema. Skripta pri svakom pokretanju razmijeni ID i secret za pristupni token koji vrijedi 24 sata. Token se nigdje ne zapisuje ni ne commita.
+
+Uvjet: aplikacija i trgovina moraju biti u istoj Shopify organizaciji, inače ta razmjena ne radi.
 
 ### 2. GitHub secrets
 
@@ -27,7 +31,8 @@ Repozitorij → Settings → Secrets and variables → Actions → New repositor
 | Ime | Vrijednost |
 |---|---|
 | `SHOPIFY_STORE_DOMAIN` | `xz1ihj-0i.myshopify.com` |
-| `SHOPIFY_ADMIN_TOKEN` | token iz koraka 1 |
+| `SHOPIFY_CLIENT_ID` | Client ID iz koraka 1 |
+| `SHOPIFY_CLIENT_SECRET` | Client secret iz koraka 1 |
 
 ### 3. Cloudflare Pages
 
@@ -71,7 +76,7 @@ Vrijednost je cijena zatečena **10. 9. 2026.** i **ne mijenja se** kad se promi
 
 ## Održavanje
 
-Skripta prekida rad ako Shopify vrati nula proizvoda, da se ne objavi prazan cjenik. Workflow tada padne i GitHub pošalje mail.
+Skripta prekida rad ako se prijava na Shopify ne uspije ili ako Shopify vrati nula proizvoda, da se ne objavi prazan cjenik. Workflow tada padne i GitHub pošalje mail.
 
 Na kraju svakog izvođenja ispisuje upozorenja za proizvode bez sidrene cijene, bez šifre i bez barkoda — vrijedi ih povremeno pogledati u logu.
 
@@ -85,7 +90,8 @@ Na kraju svakog izvođenja ispisuje upozorenja za proizvode bez sidrene cijene, 
 
 ```bash
 export SHOPIFY_STORE_DOMAIN=xz1ihj-0i.myshopify.com
-export SHOPIFY_ADMIN_TOKEN=shpat_...
+export SHOPIFY_CLIENT_ID=...
+export SHOPIFY_CLIENT_SECRET=...
 npm run generate
 ```
 
