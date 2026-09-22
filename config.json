@@ -1,0 +1,17 @@
+{
+  "shopifyApiVersion": "2025-07",
+  "trgovac": {
+    "naziv": "Green Tools TECH",
+    "oib": "28051579566",
+    "adresa": "Vukomerić 23/18, 10418 Vukomerić"
+  },
+  "oblikProdajnogObjekta": "internetska trgovina",
+  "oznakaObjekta": "greentools.tech",
+  "zadanaMarka": "Green Tools TECH",
+  "zadanaJedinicaMjere": "1 kom",
+  "nazivPosebnogOblikaProdaje": "Sniženje",
+  "oznakaNaZalihi": "na zalihi",
+  "oznakaPoNarudzbi": "po narudžbi",
+  "oznakaNedostupno": "nedostupno",
+  "danaArhive": 45
+}

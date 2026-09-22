@@ -1,0 +1,9 @@
+{
+  "name": "gtt-cjenik",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "generate": "node scripts/generate-cjenik.mjs"
+  }
+}
