@@ -9,14 +9,21 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write   # commit objave u repozitorij (trag u povijesti)
+  pages: write      # objava na GitHub Pages
+  id-token: write   # deploy-pages traži OIDC token
 
 concurrency:
   group: cjenik
   cancel-in-progress: false
 
+env:
+  # Runner je u UTC-u. Bez ovoga bi vrijeme u nazivu arhivirane datoteke
+  # bilo UTC, a Odluka traži stvarno vrijeme objave.
+  TZ: Europe/Zagreb
+
 jobs:
-  objavi:
+  pripremi:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,6 +47,22 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nema promjena za commit."
           else
-            git commit -m "Cjenik $(date -u +'%Y-%m-%d')"
+            git commit -m "Cjenik $(date +'%Y-%m-%d')"
             git push
           fi
+
+      - name: Spremi za objavu
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  objavi:
+    needs: pripremi
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.objava.outputs.page_url }}
+    steps:
+      - name: Objavi na GitHub Pages
+        id: objava
+        uses: actions/deploy-pages@v4
