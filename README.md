@@ -2,7 +2,9 @@
 
 Dnevna objava cjenika proizvoda prema **Odluci o objavi cjenika proizvoda i usluga kao mjeri izravne kontrole cijena** i **Odluci o isticanju dodatne cijene** (obje NN 101/2026, primjena od 1. 10. 2026.).
 
-Skripta povuče aktivne proizvode iz Shopifyja, zapiše `cjenik.csv` i `cjenik.xml` u `public/`, arhivira imenovanu kopiju i commita promjenu. Cloudflare Pages objavi `public/` na `cjenik.greentools.tech`.
+Skripta povuče aktivne proizvode iz Shopifyja, zapiše `cjenik.csv` i `cjenik.xml` u `public/`, arhivira imenovanu kopiju i commita promjenu. Isti workflow onda objavi `public/` na GitHub Pages.
+
+Trenutna adresa: <https://zvone-greentoolstech.github.io/gtt-cjenik/>
 
 Nije pravni savjet — za granične slučajeve konzultirati knjigovođu ili HOK.
 
@@ -34,21 +36,27 @@ Repozitorij → Settings → Secrets and variables → Actions → New repositor
 | `SHOPIFY_CLIENT_ID` | Client ID iz koraka 1 |
 | `SHOPIFY_CLIENT_SECRET` | Client secret iz koraka 1 |
 
-### 3. Cloudflare Pages
+### 3. GitHub Pages
 
-Cloudflare → Workers & Pages → Create → Pages → Connect to Git → odaberi ovaj repozitorij.
+Repozitorij mora biti **public** — Pages na besplatnom planu ne radi za privatne repozitorije.
 
-- Framework preset: **None**
-- Build command: *(prazno)*
-- Build output directory: **`public`**
+Settings → Pages → Source: **GitHub Actions**. Ništa više; objavu radi workflow, korakom `upload-pages-artifact` + `deploy-pages`.
 
-Nakon prvog deploya: Custom domains → Set up a custom domain → `cjenik.greentools.tech`. Cloudflare sam doda DNS zapis i certifikat.
+### 4. Poddomena (neobavezno)
 
-### 4. Link na webshopu
+Odluka ne propisuje adresu, pa je `github.io` adresa sasvim u redu. Za ljepšu adresu:
 
-U podnožje Shopify teme dodaj vidljiv link **Cjenik** na `https://cjenik.greentools.tech/`, dostupan bez prijave.
+1. Kod registrara domene dodaj CNAME zapis `cjenik` → `zvone-greentoolstech.github.io`.
+2. Settings → Pages → Custom domain → `cjenik.greentools.tech` → Save.
+3. Kad certifikat izađe, uključi *Enforce HTTPS*.
 
-### 5. Prva objava
+Redoslijed je bitan: postavljanje domene prije nego DNS zapis proradi obori postojeću adresu.
+
+### 5. Link na webshopu
+
+U podnožje Shopify teme dodaj vidljiv link **Cjenik**, dostupan bez prijave.
+
+### 6. Prva objava
 
 Actions → *Objava cjenika* → Run workflow. Provjeri da se datoteke pojave i da se `cjenik.csv` otvara u anonimnom prozoru.
 
@@ -68,6 +76,12 @@ internetska-trgovina_<adresa>_<oznaka-objekta>_<broj-pohrane>_<YYYYMMDD-HHmm>.cs
 
 Broj pohrane raste monotono i čuva se u `public/arhiva/stanje.json`. Datoteke starije od 45 dana se brišu (Odluka traži najmanje 30). Uz to, svaka objava je i zaseban git commit — povijest repozitorija je dokaz što je i kada bilo objavljeno.
 
+Vrijeme objave se za starenje i za prikaz čita **iz naziva datoteke**, ne iz vremena zadnje izmjene. Na GitHub Actionsu se repozitorij svaki put iznova klonira, pa sve arhivirane datoteke dobiju vrijeme checkouta — po njemu bi izgledale kao da su nastale jutros i čišćenje se nikad ne bi okinulo.
+
+`public/arhiva/index.html` je popis arhive koji generator prepiše pri svakoj objavi. GitHub Pages ne radi automatski popis direktorija, pa bi `/arhiva/` bez njega vraćao 404.
+
+Workflow radi uz `TZ: Europe/Zagreb`. Runner je inače u UTC-u, pa bi vrijeme u nazivu datoteke bilo sat-dva ranije od stvarnog vremena objave.
+
 ## Sidrena cijena
 
 Sidrena cijena živi u Shopifyju kao metafield proizvoda **`custom.sidrena_cijena`** (tip: decimalni broj). Ista vrijednost hrani i prikaz na stranici proizvoda i ovaj cjenik, pa postoji samo jedan izvor istine.
@@ -79,6 +93,10 @@ Vrijednost je cijena zatečena **10. 9. 2026.** i **ne mijenja se** kad se promi
 Stupac `barkod` je namjerno prazan za sve artikle. Green Tools TECH proizvodi vlastite alate i prodaje ih izravno, bez posredovanja maloprodajnih lanaca koji traže GTIN/EAN oznake, pa ih artikli nemaju. Odluka traži da stupac postoji, a on postoji i ostaje prazan jer podatka nema. Upisivanje izmišljene oznake bilo bi netočno, pa se ne radi.
 
 Ako GTT jednom uvede EAN oznake, dovoljno ih je upisati u Shopify i sljedeća objava ih pokupi bez ikakve izmjene skripte.
+
+## Napomena o `public/_headers`
+
+Ta datoteka je iz Cloudflare Pages postavljanja i na GitHub Pagesu **ne radi ništa** — GitHub ne dopušta vlastita zaglavlja. Nije problem: GitHub sam servira `.csv` kao `text/csv`, `.xml` kao XML, i na sve odgovore šalje `Access-Control-Allow-Origin: *`, pa automatizirano preuzimanje s drugih domena radi. Datoteka ostaje u repozitoriju za slučaj da se jednom prijeđe na Cloudflare.
 
 ## Održavanje
 
@@ -101,6 +119,8 @@ export SHOPIFY_CLIENT_SECRET=...
 npm run generate
 ```
 
-## Provjera prije prve objave
+## Stanje
 
-Sve je popunjeno. Ostaje samo kreirati Shopify token i proći korake postavljanja iznad.
+Postavljeno i provjereno 23. 9. 2026.: repozitorij je public, Pages objavljuje iz Actionsa, cjenik i arhiva su dostupni na github.io adresi, a automatizirano preuzimanje s druge domene radi.
+
+Otvoreno: CNAME zapis za `cjenik.greentools.tech` i link u podnožju webshopa.
