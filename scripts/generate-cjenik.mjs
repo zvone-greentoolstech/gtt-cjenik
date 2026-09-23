@@ -7,6 +7,8 @@
  * Izvor podataka: Shopify Admin GraphQL API.
  * Izlaz: public/cjenik.csv, public/cjenik.xml (uvijek najnovija verzija)
  *        public/arhiva/<naziv-po-odluci>.csv|.xml (trajni zapis svake objave)
+ *        public/arhiva/index.html (popis arhive; GitHub Pages ne generira
+ *        automatski popis direktorija, pa ga pisemo sami)
  *
  * Pokretanje: node scripts/generate-cjenik.mjs
  * Potrebne varijable okoline:
@@ -238,13 +240,122 @@ function sljedeciBrojPohrane(putanjaStanja) {
   return stanje.brojPohrane;
 }
 
+/**
+ * Vrijeme objave citamo iz naziva datoteke (_YYYYMMDD-HHmm), ne iz mtime-a.
+ * Na GitHub Actionsu se repozitorij svaki put iznova klonira, pa svi arhivirani
+ * zapisi dobiju vrijeme checkouta - po mtime-u bi izgledali kao da su svi
+ * nastali jutros, cisscenje se nikad ne bi okinulo, a popis bi pokazivao
+ * pogresne datume. Naziv datoteke je jedini pouzdan izvor.
+ */
+const VREMENSKI_UZORAK = /_(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})\.(?:csv|xml)$/;
+
+function brojPohraneIzNaziva(ime) {
+  const m = ime.match(/_(\d+)_\d{8}-\d{4}\.(?:csv|xml)$/);
+  return m ? Number(m[1]) : 0;
+}
+
+function vrijemeIzNaziva(ime) {
+  const m = ime.match(VREMENSKI_UZORAK);
+  if (!m) return null;
+  const [, g, mj, d, h, min] = m;
+  return new Date(Number(g), Number(mj) - 1, Number(d), Number(h), Number(min));
+}
+
 function ocistiArhivu(dir, danaZadrzati) {
   const granica = Date.now() - danaZadrzati * 24 * 60 * 60 * 1000;
   for (const ime of readdirSync(dir)) {
-    if (ime === '.gitkeep' || ime === 'stanje.json') continue;
-    const p = join(dir, ime);
-    if (statSync(p).mtimeMs < granica) unlinkSync(p);
+    if (ime === '.gitkeep' || ime === 'stanje.json' || ime === 'index.html') continue;
+    const vrijeme = vrijemeIzNaziva(ime);
+    // Datoteku bez prepoznatljivog vremena radije zadrzimo nego obrisemo.
+    if (vrijeme && vrijeme.getTime() < granica) unlinkSync(join(dir, ime));
   }
+}
+
+const htmlEscape = (v) => String(v ?? '')
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;');
+
+/**
+ * GitHub Pages ne generira popis direktorija, pa bi /arhiva/ inace vracao 404.
+ * Nakon svake objave prepisemo popis onoga sto je stvarno u mapi.
+ */
+function zapisiPopisArhive(dir) {
+  const datoteke = readdirSync(dir)
+    .filter((ime) => ime.endsWith('.csv') || ime.endsWith('.xml'))
+    .map((ime) => ({
+      ime,
+      vrijeme: vrijemeIzNaziva(ime),
+      brojPohrane: brojPohraneIzNaziva(ime),
+      velicina: statSync(join(dir, ime)).size,
+    }))
+    .sort((a, b) => {
+      const av = a.vrijeme ? a.vrijeme.getTime() : 0;
+      const bv = b.vrijeme ? b.vrijeme.getTime() : 0;
+      // Najnovije gore. Unutar iste minute presudi redni broj pohrane,
+      // a tek onda naziv, da CSV i XML iste objave ostanu jedno uz drugo.
+      return bv - av || b.brojPohrane - a.brojPohrane || a.ime.localeCompare(b.ime);
+    });
+
+  const stavke = datoteke.map((d) => {
+    const datum = d.vrijeme
+      ? d.vrijeme.toLocaleString('hr-HR', { dateStyle: 'short', timeStyle: 'short' })
+      : 'nepoznato vrijeme';
+    const kb = Math.max(1, Math.round(d.velicina / 1024));
+    return `    <li><a href="${htmlEscape(d.ime)}">${htmlEscape(d.ime)}<span>${htmlEscape(datum)} &middot; ${kb} kB</span></a></li>`;
+  }).join('\n');
+
+  const html = `<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arhiva cjenika — Green Tools TECH</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #5c5c5c; --line: #e2e2e2; --accent: #2f6b3a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161817; --fg: #ececec; --muted: #a0a4a1; --line: #2e312f; --accent: #8fc79b; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding: 48px 16px;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  p.lead { color: var(--muted); margin: 0 0 32px; }
+  p.lead a { color: var(--accent); }
+  ul { list-style: none; padding: 0; margin: 0 0 32px; border-top: 1px solid var(--line); }
+  li { border-bottom: 1px solid var(--line); }
+  li a { color: var(--accent); text-decoration: none; display: block; padding: 12px 0; font-weight: 600; word-break: break-all; }
+  li a:hover { text-decoration: underline; }
+  li a span { display: block; font-weight: 400; color: var(--muted); font-size: 0.875rem; word-break: normal; }
+  footer { color: var(--muted); font-size: 0.875rem; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Arhiva cjenika</h1>
+  <p class="lead">Ranije objave, najmanje 30 dana unatrag. <a href="../">Natrag na aktualni cjenik</a></p>
+
+  <ul>
+${stavke}
+  </ul>
+
+  <footer>
+    Naziv svake datoteke sadrzi oblik prodajnog objekta, adresu, oznaku objekta, redni broj pohrane
+    i vrijeme objave, prema tocki VI. Odluke (NN 101/2026). Prikazano vrijeme je vrijeme objave
+    ocitano iz naziva datoteke.
+  </footer>
+</main>
+</body>
+</html>
+`;
+  writeFileSync(join(dir, 'index.html'), html);
+  return datoteke.length;
 }
 
 /* ---------- glavni tok ---------- */
@@ -276,12 +387,14 @@ writeFileSync(join(arhivaDir, `${osnova}.csv`), csv);
 writeFileSync(join(arhivaDir, `${osnova}.xml`), xml);
 
 ocistiArhivu(arhivaDir, CONFIG.danaArhive);
+const uArhivi = zapisiPopisArhive(arhivaDir);
 
 const bezSidrene = redovi.filter((r) => r.sidrenaCijena === null);
 const bezSifre = redovi.filter((r) => !r.sifra);
 const bezBarkoda = redovi.filter((r) => !r.barkod);
 
 console.log(`Cjenik objavljen: ${redovi.length} stavki, broj pohrane ${brojPohrane}, datoteka ${osnova}`);
+console.log(`Arhiva: ${uArhivi} datoteka.`);
 if (bezSidrene.length) console.warn(`UPOZORENJE: bez sidrene cijene (${bezSidrene.length}): ${bezSidrene.map((r) => r.naziv).join(', ')}`);
 if (bezSifre.length) console.warn(`UPOZORENJE: bez sifre (${bezSifre.length}): ${bezSifre.map((r) => r.naziv).join(', ')}`);
 if (bezBarkoda.length) console.warn(`Napomena: bez barkoda (${bezBarkoda.length}).`);
