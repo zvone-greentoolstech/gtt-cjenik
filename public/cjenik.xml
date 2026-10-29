@@ -8,8 +8,8 @@
   <objava>
     <oblik_prodajnog_objekta>internetska trgovina</oblik_prodajnog_objekta>
     <oznaka_objekta>greentools.tech</oznaka_objekta>
-    <broj_pohrane>29</broj_pohrane>
-    <datum_vrijeme>2026-10-28T10:43:18.875Z</datum_vrijeme>
+    <broj_pohrane>30</broj_pohrane>
+    <datum_vrijeme>2026-10-29T06:47:19.331Z</datum_vrijeme>
   </objava>
   <proizvod>
     <naziv_proizvoda>Broadfork</naziv_proizvoda>
@@ -153,6 +153,84 @@
     <sidrena_cijena>15,00</sidrena_cijena>
     <barkod></barkod>
     <dostupnost>na zalihi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Hoop Coop — Mobile House for Pastured Poultry - 6 m</naziv_proizvoda>
+    <sifra_proizvoda>HC-06</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>3780,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>3780,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena></sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Hoop Coop — Mobile House for Pastured Poultry - 8 m</naziv_proizvoda>
+    <sifra_proizvoda>HC-08</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>4330,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>4330,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena></sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Hoop Coop — Mobile House for Pastured Poultry - 10 m</naziv_proizvoda>
+    <sifra_proizvoda>HC-10</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>4880,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>4880,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena></sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Hoop Coop — Mobile House for Pastured Poultry - 12 m</naziv_proizvoda>
+    <sifra_proizvoda>HC-12</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>5430,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>5430,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena></sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Hoop Coop — Mobile House for Pastured Poultry - 14 m</naziv_proizvoda>
+    <sifra_proizvoda>HC-14</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>5980,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>5980,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena></sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv_proizvoda>Hoop Coop — Mobile House for Pastured Poultry - 16 m</naziv_proizvoda>
+    <sifra_proizvoda>HC-16</sifra_proizvoda>
+    <marka>Green Tools TECH</marka>
+    <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
+    <cijena_za_jedinicu_mjere>6530,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>6530,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena></sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>po narudžbi</dostupnost>
   </proizvod>
   <proizvod>
     <naziv_proizvoda>Leek Dibbles (237 mm) for Multi Dibbler</naziv_proizvoda>
