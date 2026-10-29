@@ -1,11 +1,13 @@
 name: Objava cjenika
 
 # Odluka NN 101/2026 traži objavu svakog radnog dana najkasnije do 8:00.
-# Cron je u UTC-u. 04:30 UTC = 06:30 ljeti (CEST) i 05:30 zimi (CET),
-# dakle najmanje sat i pol zalihe za kašnjenje GitHubova rasporeda.
+# Cron je u UTC-u. GitHubov schedule je best-effort i zna kasniti satima,
+# pa su termini rani i u tri navrata; zaštita ispod sprječava dvostruku objavu.
 on:
   schedule:
-    - cron: '30 4 * * 1-5'
+    - cron: '17 1 * * 1-5'   # 02:17 CET / 03:17 CEST
+    - cron: '43 3 * * 1-5'   # 04:43 CET / 05:43 CEST
+    - cron: '23 5 * * 1-5'   # 06:23 CET / 07:23 CEST
   workflow_dispatch:
 
 permissions:
@@ -32,7 +34,19 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Je li već objavljeno danas?
+        id: provjera
+        run: |
+          OBJAVA=$(grep -oP '(?<=<datum_vrijeme>).*(?=</datum_vrijeme>)' public/cjenik.xml || true)
+          if [ -n "$OBJAVA" ] && [ "$(date -d "$OBJAVA" +%F)" = "$(date +%F)" ]; then
+            echo "Već objavljeno danas ($OBJAVA), preskačem generiranje."
+            echo "preskoci=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "preskoci=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Generiraj cjenik
+        if: steps.provjera.outputs.preskoci != 'true' || github.event_name == 'workflow_dispatch'
         env:
           SHOPIFY_STORE_DOMAIN: ${{ secrets.SHOPIFY_STORE_DOMAIN }}
           SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_CLIENT_ID }}
@@ -40,6 +54,7 @@ jobs:
         run: node scripts/generate-cjenik.mjs
 
       - name: Commitaj objavu
+        if: steps.provjera.outputs.preskoci != 'true' || github.event_name == 'workflow_dispatch'
         run: |
           git config user.name  "cjenik-bot"
           git config user.email "cjenik-bot@users.noreply.github.com"
