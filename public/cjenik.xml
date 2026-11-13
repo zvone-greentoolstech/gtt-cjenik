@@ -8,18 +8,18 @@
   <objava>
     <oblik_prodajnog_objekta>internetska trgovina</oblik_prodajnog_objekta>
     <oznaka_objekta>greentools.tech</oznaka_objekta>
-    <broj_pohrane>40</broj_pohrane>
-    <datum_vrijeme>2026-11-12T08:25:33.431Z</datum_vrijeme>
+    <broj_pohrane>41</broj_pohrane>
+    <datum_vrijeme>2026-11-13T08:07:46.357Z</datum_vrijeme>
   </objava>
   <proizvod>
     <naziv_proizvoda>Broadfork</naziv_proizvoda>
     <sifra_proizvoda>BF</sifra_proizvoda>
     <marka>Green Tools TECH</marka>
     <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
-    <cijena_za_jedinicu_mjere>175,00</cijena_za_jedinicu_mjere>
-    <maloprodajna_cijena>175,00</maloprodajna_cijena>
-    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
-    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <cijena_za_jedinicu_mjere>150,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>150,00</maloprodajna_cijena>
+    <poseban_oblik_prodaje>DA</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje>Sniženje</naziv_posebnog_oblika_prodaje>
     <sidrena_cijena>175,00</sidrena_cijena>
     <barkod></barkod>
     <dostupnost>na zalihi</dostupnost>
@@ -250,8 +250,8 @@
     <sifra_proizvoda>PKIT1</sifra_proizvoda>
     <marka>Green Tools TECH</marka>
     <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
-    <cijena_za_jedinicu_mjere>595,00</cijena_za_jedinicu_mjere>
-    <maloprodajna_cijena>595,00</maloprodajna_cijena>
+    <cijena_za_jedinicu_mjere>635,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>635,00</maloprodajna_cijena>
     <poseban_oblik_prodaje>DA</poseban_oblik_prodaje>
     <naziv_posebnog_oblika_prodaje>Sniženje</naziv_posebnog_oblika_prodaje>
     <sidrena_cijena>660,00</sidrena_cijena>
@@ -315,8 +315,8 @@
     <sifra_proizvoda>KIT-ND</sifra_proizvoda>
     <marka>Green Tools TECH</marka>
     <neto_kolicina_jedinica_mjere>1 kom</neto_kolicina_jedinica_mjere>
-    <cijena_za_jedinicu_mjere>315,00</cijena_za_jedinicu_mjere>
-    <maloprodajna_cijena>315,00</maloprodajna_cijena>
+    <cijena_za_jedinicu_mjere>325,00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>325,00</maloprodajna_cijena>
     <poseban_oblik_prodaje>DA</poseban_oblik_prodaje>
     <naziv_posebnog_oblika_prodaje>Sniženje</naziv_posebnog_oblika_prodaje>
     <sidrena_cijena>350,00</sidrena_cijena>
