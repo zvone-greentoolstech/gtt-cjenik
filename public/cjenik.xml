@@ -8,8 +8,8 @@
   <objava>
     <oblik_prodajnog_objekta>internetska trgovina</oblik_prodajnog_objekta>
     <oznaka_objekta>greentools.tech</oznaka_objekta>
-    <broj_pohrane>43</broj_pohrane>
-    <datum_vrijeme>2026-11-17T09:18:23.122Z</datum_vrijeme>
+    <broj_pohrane>44</broj_pohrane>
+    <datum_vrijeme>2026-11-18T08:37:27.419Z</datum_vrijeme>
   </objava>
   <proizvod>
     <naziv_proizvoda>Broadfork</naziv_proizvoda>
@@ -22,7 +22,7 @@
     <naziv_posebnog_oblika_prodaje>Sniženje</naziv_posebnog_oblika_prodaje>
     <sidrena_cijena>175,00</sidrena_cijena>
     <barkod></barkod>
-    <dostupnost>na zalihi</dostupnost>
+    <dostupnost>po narudžbi</dostupnost>
   </proizvod>
   <proizvod>
     <naziv_proizvoda>Crimper Attachment for Multi Dibbler</naziv_proizvoda>
