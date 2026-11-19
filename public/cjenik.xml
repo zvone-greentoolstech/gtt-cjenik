@@ -8,8 +8,8 @@
   <objava>
     <oblik_prodajnog_objekta>internetska trgovina</oblik_prodajnog_objekta>
     <oznaka_objekta>greentools.tech</oznaka_objekta>
-    <broj_pohrane>44</broj_pohrane>
-    <datum_vrijeme>2026-11-18T08:37:27.419Z</datum_vrijeme>
+    <broj_pohrane>45</broj_pohrane>
+    <datum_vrijeme>2026-11-19T08:52:49.999Z</datum_vrijeme>
   </objava>
   <proizvod>
     <naziv_proizvoda>Broadfork</naziv_proizvoda>
@@ -295,7 +295,7 @@
     <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
     <sidrena_cijena>110,00</sidrena_cijena>
     <barkod></barkod>
-    <dostupnost>na zalihi</dostupnost>
+    <dostupnost>po narudžbi</dostupnost>
   </proizvod>
   <proizvod>
     <naziv_proizvoda>Multi Dibbler</naziv_proizvoda>
